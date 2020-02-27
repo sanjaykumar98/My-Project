@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Naresh IT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../node_modules/font-awsome/fontawesome-free-5.12.1-web/css/all.css">
+    <script src="https://kit.fontawesome.com/18a41aede5.js" crossorigin="anonymous"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular/angular-route.js"></script>
+    <script>
+        var app=angular.module("DemoApp",['ngRoute']);
+            app.config(function($routeProvider){
+                $routeProvider
+                .when("/",{
+                    templateUrl:"home.html"
+                })
+                .when("/home",{
+                    templateUrl:"home.html"
+                })
+                .when("/contact",{
+                    templateUrl:"contact.html"
+                })
+                .when("/about",{
+                    templateUrl:"about.html"
+                })
+                .when("/password",{
+                    templateUrl:"password.html"
+                })
+                .when("/register",{
+                    templateUrl:"register.html"
+                })
+                .when("/service",{
+                    templateUrl:"service.html"
+                })
+                .when("/login",{
+                    templateUrl:"login.html"
+                })
+            })
+            app.controller("IndexController", function($scope){
+
+            })
+        </script>
+    </script>
+    
+    <style>
+    .container-fluid{
+        box-shadow: 0px 10px 10px rgb(64, 79, 47);
+        width: 95%;
+    }
+    table a{
+        color: aliceblue;
+        
+    }
+    #stats{
+        box-shadow: 0px 1px 30px rgb(30, 50, 100  )
+            }
+    .siteTitle{
+        font-family: Georgia;
+        font-size: 2em;
+        text-align: center;
+        letter-spacing: 5px;
+        font-weight: bold;
+    
+    }
+    li{
+        list-style: none;
+    }
+    table li a{
+        color: black;
+    }
+    #footer{
+        background-color: goldenrod;
+        
+
+
+    }
+    
+    
+        
+   
+   
+    </style>
+</head>
+<body ng-app="DemoApp" ng-controller="IndexController">
+<div class="container-fluid">
+    <!--site Title-->
+    <div class="siteTitle">Naresh-i-Technologies</div>
+    <!--Tool Bar Start-->
+    <div class="btn-toolbar form-group justify-content-between bg-light">
+        <div class="btn-group">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a href="#"class="navbar-brand"></a>
+                <button data-toggle="collapse" data-target="#menuDemo" type="button" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+        <div class="btn-group">
+            <a href="#!home" class="btn"><i class="fa fa-home" ></i> Home</a>
+            <a href="#!service"  class="btn" ><i class="fa fa-cog" ></i> Service</a>
+            <a class="btn" href="#!contact"><i class="fa fa-phone" ></i> Contact Us</a>
+            <a class="btn" href="#!about" ><i class="fa fa-book" ></i> About</a>
+        </div>
+        <div class="btn btn-group">
+            <!--Login Drop down-->
+            <div class="dropdown" id="#dropdownDemo">
+                <div class="dropdown-menu">
+                    <a href="#!login" class=" dropdown-item" ><span class=" dropdown-item-text"><i class="fa fa-sign-in-alt" aria-hidden="true"></i> Sign in</span></a>
+                    <a href="#!register" class=" dropdown-item"><span class=" dropdown-item-text"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</span></a>
+                    <a href="#!password" class=" dropdown-item" ><span class=" dropdown-item-text"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Forgot Password</span></a>
+                </div>
+                <button class="btn btn-light dropdown-toggle" data-toggle="dropdown" data-target="#dropdownDemo">
+                    <i class="fa fa-wrench"></i> Manage Account
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    <!--Nav End End-->
+    <!--HOME-->
+    <div>
+        <ng-view></ng-view>
+    </div>
+    <!--END-->
+      <!--Footer Start-->
+      <br>
+      <div id="footer" >
+        <table cellpadding="50"  >
+            <h5 align="center" >Naresh-i-Technologies</h5>
+            <div >
+                <td >
+                    <table  style="margin-left: 200px;">
+                        <li><a href="#!home" ><i class="fa fa-home" ></i> Home</a></li>
+                        <li><a href="#!about"><i class="fa fa-book" ></i> About</a></li>
+                        <li><a href="#!contact" ><i class="fa fa-phone" ></i> Contact</a></li>
+                        <li><a href="#!service" ><i class="fa fa-cog" ></i> Service</a></li>
+                    </table>
+                </td>
+                <td>
+    
+                    <table>
+                        <li><a href="#"><i class="fa fa-facebook" ></i>Facebook</a></li>
+                        <li><a href="#"><i class="fa fa-twitter" ></i>Twitter</a></li>
+                        <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i>Google</a></li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i>Youtube</a></li>
+                    </table>
+    
+                </td>
+                <td >
+                    <table >
+                        <li><i class="fa fa-address-card" aria-hidden="true"></i> Naresh i Technologies</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; info@nareshit.com</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> +91-xxxxxxxxxx</li>
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i></i> Ameerpet,Hyderabad,Telangana</li>
+                    </table>
+                </td>
+            </div>
+            
+        </table>
+        
+      </div>
+      <!--Footer End-->
+
+<div>
+      <h6>&copy;nareshit@2020</h6>          
+</div>
+</div>
+<br>
+<!--Container End-->
+    
+</body>
+</html> 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../node_modules/font-awsome/fontawesome-free-5.12.1-web/css/all.css">
+    <style>
+        .login{
+            border: solid 2px black;
+            margin-top: 100px;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            left: 400px;
+            box-shadow: 0px 0px 20px cornflowerblue;
+            border-radius: 10px;
+            background-image: url(images/login.png);
+            background-size: 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+        
+            font-weight: bold;
+            
+        }
+        label{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <h5 style="margin-top:20px " align="center">Login Your Account</h5>
+            
+                <form>
+                    <div style="margin-left: 30px;" >
+                        <label>Email</label>
+                        <div class=" input-group">
+                        <div class=" input-group-prepend">
+                            <div class="btn btn-warning">
+                               @ 
+                            </div>
+                            <span><input type="email"  class=" input-group-text form-control"></span>
+                        </div>
+                        <div class=" input-group-append ">
+                            <div class="btn btn-primary"></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div style="margin-left: 30px;" >
+                        <br>
+                        <label>Password</label>
+                        <div class=" input-group">
+                        <div class=" input-group-prepend">
+                            <div class="btn btn-warning">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                            </div>
+                            <span><input type="password" class=" input-group-text form-control"></span>
+                        </div>
+                        <div class=" input-group-append ">
+                            <div class="btn btn-primary"></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class=" text-center" style="margin-top:20px">
+                        <button class=" btn btn-success">SingUp</button>
+                        <button class=" btn btn-dark">SingIn</button>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</body>
+</html>

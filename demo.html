@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p-{{2+3}}</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/angular/angular.js"></script>
+    <style>
+        .box{
+            border: 2px solid darkcyan;
+            border-radius: 10px;
+            float: left;
+            padding: 20px;
+            margin: auto;
+            margin-top: 50px;
+            margin-left: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class=" container">
+        <div class=" box">
+            <form>
+                <dl>
+                    <dt>Prouct</dt>
+                    <dd><input type="text" ng-model="product.name" class=" form-control"></dd>
+                    <dt>Mfd. Date</dt>
+                    <dd><input type="date" ng-model="product.date" class=" form-control"></dd>
+                    <dt>Availability</dt>
+                    <dd><input type="radio" ng-model="product.stock"  value="Available">Yes
+                    <span><input type="radio" ng-model="product.stock" value="Out of Stock"></span>NO</dd>
+                        <dt>Ship To</dt>
+                        <dd>
+                            <select class=" form-control" ng-model="product.city">
+                                <option>Banglore</option>
+                                <option>Hyderabad</option>
+                                <option>Mumbai</option>
+                            </select>
+                        </dd>
+                </dl>
+            </form>
+            
+        </div>
+        <div class="box">
+            <dt>Product</dt>
+            <dd>{{product.name}}</dd>
+            <dt>Mfd.Date</dt>
+            <dd>{{product.date.toLocaleDateString()}}</dd>
+            <dt>City</dt>
+            <dd>{{product.city}}</dd>
+            <dt>Availability</dt>
+            <dd>{{product.stock}}</dd>
+        </div>
+    </div>
+    
+</body>
+</html>
