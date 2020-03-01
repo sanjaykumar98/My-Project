@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.csS">
+    <style>
+        .container{
+            margin-top: 80px;
+            width: 500px;
+            border: 2px solid green; 
+            padding: 20px;
+            border-radius: 10PX;
+            box-shadow: 0px 0px 10px black;   
+        }
+    </style>
+    <script>
+        var details={
+            card:"1234567890",
+            name:"SANJAY KUMAR",
+            exp:"2020",
+            cvv:"315"
+
+
+        };
+        function SubmitClick(){
+            
+            document.write(`<h1 align="center" style="color:"green";margin-top:'100px'">Payment Success</h1>`)            
+        }
+        function verifyCard(){
+            CusCard=document.getElementById("txtCard").value;
+            if (CusCard==details.card){
+                document.getElementById("txtName").disabled=false;
+                document.getElementById("txtCard").disabled=true;
+            }
+        }
+        function VerifyName(){
+
+            CusName=document.getElementById("txtName").value;
+        
+            if (CusName==details.name){
+                document.getElementById("txtName").disabled=true;
+                document.getElementById("txtDate").disabled=false;
+                
+            }
+        }
+        function verifyExp(){
+            CusExp=document.getElementById("txtDate").value;
+            if (CusExp==details.exp){
+                document.getElementById("txtCVV").disabled=false;
+                document.getElementById("txtDate").disabled=true;
+            }
+        }
+        function verifyCvv(){
+            CusCVV=document.getElementById("txtCVV").value;
+            if (CusCVV==details.cvv){
+                document.getElementById("txtAmount").disabled=false;
+                document.getElementById("txtCVV").disabled=true;
+            }
+        }
+        function verifyAmount(){
+            CusAmount=document.getElementById("txtAmount").value;
+            
+                    document.getElementById("txtAmount").disabled=true;
+                    document.getElementById("txtPay").disabled=false;
+               
+
+                
+            
+        }
+    </script>
+</head>
+<body>
+    <div  class=" container">
+        <form >
+            <div>
+                <lable>Enter card Number</lable>
+                <input type="text"  onkeyup="verifyCard()" required id="txtCard" class="form-control">
+            </div>
+            <div>
+                <label>Name on the Card</label>
+                <input type="text"  id="txtName" onkeyup="VerifyName()" disabled required class=" form-control">
+            </div>
+            <div>
+                <label>Year of Expiry</label>
+                <input type="text" id="txtDate" onkeyup="verifyExp()" disabled required class=" form-control">
+            </div>
+            <div>
+                <label>CVV</label>
+                <input type="text" id="txtCVV" onkeyup="verifyCvv()" disabled required class=" form-control">
+             </div>
+            <div>
+                <label>Amount</label>
+                <input type="text" id="txtAmount" oninput="verifyAmount()" required disabled class=" form-control">
+            </div>
+            <div align="center"><br>
+                <button onclick="SubmitClick()" id="txtPay" disabled  class=" btn btn-warning btn-block"><b>Pay Amount</b></button>
+        
+            </div>
+        </form>
+    </div>
+<script async src="https://drv.tw/inc/wd.js"></script></body>
+</html>
